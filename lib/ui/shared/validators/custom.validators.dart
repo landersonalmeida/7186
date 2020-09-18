@@ -3,7 +3,7 @@ class CustomValidators {
     RegExp regex =
         new RegExp(r"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
 
-    if (value.isEmpty) {
+    if (value.isEmpty || !regex.hasMatch(value)) {
       return 'E-mail inválido';
     }
     return null;
